@@ -1,21 +1,29 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginForm = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
     // Weryfikacja danych
     fetch("/data/users.json")
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
       .then((users) => {
         const user = users.find(
           (user) => user.username === username && user.password === password
         );
         if (user) {
           onLogin(user);
+          navigate('/profile');
         } else {
           setError("Invalid username or password");
         }
