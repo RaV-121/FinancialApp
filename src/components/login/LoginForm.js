@@ -23,7 +23,7 @@ const LoginForm = ({ onLogin }) => {
         );
         if (user) {
           onLogin(user);
-          navigate('/profile');
+          navigate('/profile/home');
         } else {
           setError("Invalid username or password");
         }

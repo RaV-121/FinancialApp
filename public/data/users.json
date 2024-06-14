@@ -1,14 +1,17 @@
 [
     {
       "username": "Random",
-      "password": "Whoknows"
+      "password": "Whoknows",
+      "saldo": 5000
     },
     {
       "username": "Random2",
-      "password": "Whoknows2"
+      "password": "Whoknows2",
+      "saldo": 6000
     },
     {
       "username": "admin",
-      "password": "admin"
+      "password": "adminpassword",
+      "saldo": 7000
     }
   ]
