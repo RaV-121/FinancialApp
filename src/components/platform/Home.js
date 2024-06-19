@@ -29,7 +29,7 @@ const Home = ({user, transactions}) => {
                     <div>{saldoSum}</div> 
             <p><strong>Ostatnie transakcje:</strong></p>
                     {transactions.slice(0,4).map((transakcja, index) => (
-                      filtruj(transakcja) ? <HistoryList transakcja={transakcja} index={index} /> : null
+                      filtruj(transakcja) ? <HistoryList transakcja={transakcja} index={index} filter="Tytul" /> : null
                     ))}
         </div>
     </React.Fragment>

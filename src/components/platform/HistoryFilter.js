@@ -1,8 +1,13 @@
 import React from 'react'
 
-function HistoryFilter({user, transactions}) {
+function HistoryFilter({filter, onFilterChange}) {
   return (
-    <div>HistoryFilter {user.username}</div>
+    <input
+        type="text"
+        value={filter}
+        onChange={(e) => onFilterChange(e.target.value)}
+        placeholder="Filter transactions by any tag"
+      />
   )
 }
 

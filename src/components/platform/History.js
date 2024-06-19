@@ -4,6 +4,11 @@ import HistoryList from './HistoryList';
 
 function History({user, transactions}) {
     const [showHistoryFilter, setShowHistoryFilter] = useState(false);
+    const [filter, setFilter] = useState('');
+
+    const handleFilterChange = (newFilter) => {
+      setFilter(newFilter);
+    };
 
     const handleToggleHistoryFilter = () => {
         setShowHistoryFilter(!showHistoryFilter);
@@ -26,10 +31,10 @@ function History({user, transactions}) {
             <button onClick={handleToggleHistoryFilter}>Filtruj</button>
         </div>
         
-        <div className='Filter'>{showHistoryFilter && <HistoryFilter user={user} transactions={transactions} />}</div>
+        <div className='Filter'>{showHistoryFilter && <HistoryFilter filter={filter} onFilterChange={handleFilterChange} />}</div>
         
         {transactions.map((transakcja, index) => (
-            filtruj(transakcja) ? <HistoryList transakcja={transakcja} index={index} /> : null
+            filtruj(transakcja) ? <HistoryList transakcja={transakcja} index={index} filter={filter} user={user}/> : null
         ))}
         </div>
     </React.Fragment>
