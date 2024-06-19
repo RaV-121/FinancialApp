@@ -27,7 +27,7 @@ body{
   text-align: center;
 }
 
-form{
+.loginForm{
   background-color: var(--green-color);
   display: flex;
   flex-direction: column;

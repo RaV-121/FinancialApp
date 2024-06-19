@@ -36,7 +36,7 @@ const LoginForm = ({ onLogin }) => {
 
   return (
     <div className="full-screen-container">
-      <form onSubmit={handleSubmit}>
+      <form className="loginForm" onSubmit={handleSubmit}>
       <h1>Moje e-grosze</h1>
       <div>
         <label>Username:</label>

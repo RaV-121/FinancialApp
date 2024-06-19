@@ -9,10 +9,10 @@ function HistoryList({transakcja, index, filter, user}) {
   }
 
   const category = (user, transakcja) =>{
-    var check = "Odebrane";
+    var check = "ODEBRANE";
     user.konta.forEach(konto => {
       if(konto.numer_konta  === transakcja.numer_konta_nadawcy){
-        check = "Wysłane"
+        check = "WYSŁANE"
         return check;
       }
     })
