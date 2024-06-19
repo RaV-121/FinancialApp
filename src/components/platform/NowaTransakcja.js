@@ -115,7 +115,7 @@ function NowaTransakcja({ user, onAddTransaction }) {
           </label>
         </div>
 
-        <button type="submit">Wyślij przelew</button>
+        <button type="submit">Potwierdź</button>
       </form>
     </React.Fragment>
   );

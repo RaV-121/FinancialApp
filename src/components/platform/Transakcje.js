@@ -8,15 +8,20 @@ function Transakcje({user, transactions}) {
     const savedTransactions = JSON.parse(localStorage.getItem('transactions'));
     const updatedTransactions = (savedTransactions.transakcje).concat(newTransaction)
     localStorage.setItem('transactions', JSON.stringify({transakcje: updatedTransactions}));
-
-    // const savedUser = JSON.parse(localStorage.getItem('user'));
-    // var kwota=0;
-    // {user.konta.map((konto, index) => {
-    //   if(konto.numer_konta == newTransaction.numer_konta_nadawcy){
-    //     kwota = konto.saldo;
-    //     kwota -= newTransaction.kwota;
-    //   }
-    // })}
+    
+    let savedUser = { konta: [] };
+    savedUser = JSON.parse(localStorage.getItem('user'));
+    let updatedUser;
+    {savedUser.konta.map(konto => {
+      let updatedSaldo = konto.saldo;
+      if(konto.numer_konta === newTransaction.numer_konta_nadawcy){
+        updatedSaldo = konto.saldo - newTransaction.kwota;
+        return updatedUser = {...savedUser, konta:[{...konto, saldo: updatedSaldo}]}
+      }else{
+        return updatedUser.konta = updatedUser.konta.concat([{...konto}])
+      }
+    })}
+    localStorage.setItem('user', JSON.stringify(updatedUser));
     
   };
 

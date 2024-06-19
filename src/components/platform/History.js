@@ -33,7 +33,7 @@ function History({user, transactions}) {
         
         <div className='Filter'>{showHistoryFilter && <HistoryFilter filter={filter} onFilterChange={handleFilterChange} />}</div>
         
-        {transactions.map((transakcja, index) => (
+        {transactions.slice().reverse().map((transakcja, index) => (
             filtruj(transakcja) ? <HistoryList transakcja={transakcja} index={index} filter={filter} user={user}/> : null
         ))}
         </div>

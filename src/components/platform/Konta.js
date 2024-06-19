@@ -5,7 +5,6 @@ const Konta = ({user}) => {
     if (!user) {
         return <div>Ładowanie danych...</div>;
       }
-  
 
   return (
     <React.Fragment>

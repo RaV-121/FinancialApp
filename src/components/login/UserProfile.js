@@ -7,7 +7,7 @@ import Transakcje from "../platform/Transakcje.js"
 const UserProfile = ({ user, setUser }) => {
   const transactionsData = JSON.parse(localStorage.getItem('transactions')) || { transakcje: [] };
   const transactions = transactionsData.transakcje || [];
-
+  const savedUser = JSON.parse(localStorage.getItem('user'));
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -39,9 +39,9 @@ const UserProfile = ({ user, setUser }) => {
       </nav>
 
       <Routes>
-        <Route path="home" element={<Home user={user} transactions={transactions}/>} />
-        <Route path="konta/*" element={<Konta user={user}/>} />
-        <Route path="transakcje/*" element={<Transakcje user={user} transactions={transactions}/>} />
+        <Route path="home" element={<Home user={savedUser} transactions={transactions}/>} />
+        <Route path="konta/*" element={<Konta user={savedUser}/>} />
+        <Route path="transakcje/*" element={<Transakcje user={savedUser} transactions={transactions}/>} />
         <Route path="budzet" element={<Budzet />} />
         <Route path="rachunki" element={<Rachunki />} />
         <Route path="ustawienia" element={<Ustawienia />} />
