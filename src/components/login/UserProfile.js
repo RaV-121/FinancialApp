@@ -1,13 +1,19 @@
 import React from "react";
 import { useNavigate, Routes, Route, Link } from 'react-router-dom';
+import Home from "../platform/Home.js"
+import Konta from "../platform/Konta.js"
+import Transakcje from "../platform/Transakcje.js"
 
 const UserProfile = ({ user, setUser }) => {
+  const transactionsData = JSON.parse(localStorage.getItem('transactions')) || { transakcje: [] };
+  const transactions = transactionsData.transakcje || [];
 
   const navigate = useNavigate();
 
   const handleLogout = () => {
     setUser(null);
     localStorage.removeItem('user');
+    localStorage.removeItem('transactions');
     navigate('/');
   };
 
@@ -17,7 +23,7 @@ const UserProfile = ({ user, setUser }) => {
         <p>Moje e-grosze</p>
         <div className="header-content">
           <p><strong>{user.username}</strong></p>
-          <button onClick={handleLogout}>Logout</button>
+          <button className="mainButton" onClick={handleLogout}>Logout</button>
         </div>
       </header>
       
@@ -33,9 +39,9 @@ const UserProfile = ({ user, setUser }) => {
       </nav>
 
       <Routes>
-        <Route path="home" element={<Home />} />
-        <Route path="konta" element={<Konta />} />
-        <Route path="transakcje" element={<Transakcje />} />
+        <Route path="home" element={<Home user={user} transactions={transactions}/>} />
+        <Route path="konta/*" element={<Konta user={user}/>} />
+        <Route path="transakcje/*" element={<Transakcje user={user} transactions={transactions}/>} />
         <Route path="budzet" element={<Budzet />} />
         <Route path="rachunki" element={<Rachunki />} />
         <Route path="ustawienia" element={<Ustawienia />} />
@@ -43,10 +49,6 @@ const UserProfile = ({ user, setUser }) => {
     </React.Fragment>
   );
 };
-
-const Home = () => <div>Home Content</div>;
-const Konta = () => <div>Konta Content</div>;
-const Transakcje = () => <div>Transakcje Content</div>;
 const Budzet = () => <div>Budzet Content</div>;
 const Rachunki = () => <div>Rachunki Content</div>;
 const Ustawienia = () => <div>Ustawienia Content</div>;

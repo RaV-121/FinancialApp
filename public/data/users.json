@@ -2,16 +2,42 @@
     {
       "username": "Random",
       "password": "Whoknows",
-      "saldo": 5000
+      "pelnomocnictwo":"Jan Kowalski",
+      "adres_pelnomocnika":"Nowa 1, 12-345 Miejscowosc",
+      "konta":[{
+        "id": 1,
+        "numer_konta":"1234567890",
+        "typ_konta":"Direct",
+        "saldo": 5000
+      },{
+        "id": 2,
+        "numer_konta":"6574839201",
+        "typ_konta":"Direct",
+        "saldo": 3000
+      }]
     },
     {
       "username": "Random2",
       "password": "Whoknows2",
-      "saldo": 6000
+      "pelnomocnictwo":"Piotr Nowak",
+      "adres_pelnomocnika":"Nowa 2, 12-345 Miejscowosc",
+      "konta":[{
+        "id": 3,
+        "numer_konta":"0987654321",
+        "typ_konta":"Direct",
+        "saldo": 7000
+      }]
     },
     {
       "username": "admin",
       "password": "adminpassword",
-      "saldo": 7000
+      "pelnomocnictwo":"Tadeusz Nazwiskowski",
+      "adres_pelnomocnika":"Nienowa 3, 54-321 Miejscowosc",
+      "konta":[{
+        "id":4,
+        "numer_konta":"1029384756",
+        "typ_konta":"Direct",
+        "saldo": 9000
+      }]
     }
   ]

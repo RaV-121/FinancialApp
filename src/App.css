@@ -3,15 +3,41 @@
   --light-green-color:rgb(77, 186, 77);
   --dark-green-color:rgb(9, 50, 9);
   --white-color: rgb(255, 255, 255);
+  --grey-color:rgb(207, 204, 204);
 }
 body{
   margin:0;
   padding:0;
   box-sizing: border-box;
   display: block;
+  height:100%;
 }
+
+.full-screen-container{
+  width:100vw;
+  height:100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--light-green-color);
+}
+
 .App {
   text-align: center;
+}
+
+form{
+  background-color: var(--green-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap:30px;
+  font-size: 1.2rem;
+  padding:4rem;
+  border-radius: 1rem;
+  color:var(--white-color);
 }
 
 header{
@@ -19,12 +45,27 @@ header{
   flex-direction: row;
   justify-content: space-between;
   padding: 0 4vw;
+  height:60px;
   background-color: var(--dark-green-color);
   color:var(--white-color);
   font-weight: bold;
+  
+}
+
+.mainButton{
+  background-color: var(--grey-color);
+  height:2rem;
+  border: none;
+  border-radius: 3px;
+  font-weight: bold;
+}
+.mainButton:hover{
+  background-color: rgb(102, 102, 102);
+  color: var(--white-color);
 }
 .header-content{
   display: flex;
+  align-items: center;
 }
 .header-content p{
   padding:0px 15px;
@@ -35,11 +76,13 @@ ul, li, a{
   display: flex;
   flex-direction: row;
   justify-content:space-evenly;
+
 }
 ul{
   padding: 0 4vw;
   margin:0px auto;
   background-color: var(--light-green-color);
+  height:45px;
 }
 ul a{
   background-color: var(--green-color);
@@ -57,8 +100,53 @@ ul a{
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.home-body{
+  background-color: var(--grey-color);
+  margin:0px 15vw;
+  height:calc(100vh - 105px);
+}
+.home-body p{
+  margin:0;
+  padding:3rem 3rem;
+}
 
+.home-body div {
+  margin-left: 4rem;
+}
+.transaction{
+  padding:1rem;
+}
+.transaction-list{
+  margin-left:20rem;
+}
+b{
+  background-color: var(--light-green-color);
+  padding:5px;
+  border-radius: 50%;
+}
+.navigation_konta_container{
+  background-color: var(--grey-color);
+  float: left;
+  height: calc(100vh - 105px);
+}
 
+.navigation_konta{
+  background-color: var(--grey-color);
+  display:flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 2rem;
+  width:fit-content;
+  gap:10px;
+}
+.navigation_konta a{
+  width: 100%;
+}
+.History-header{
+  display: flex;
+  justify-content: space-between;
+  padding:50px 150px 50px 50px;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

@@ -7,35 +7,37 @@ const LoginForm = ({ onLogin }) => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // Weryfikacja danych
-    fetch("/data/users.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
+    try {
+      const usersResponse = await fetch('/data/users.json');
+      if (!usersResponse.ok) {
+        throw new Error('Network response was not ok');
+      }
+      const users = await usersResponse.json();
+      const user = users.find(user => user.username === username && user.password === password);
+      if (user) {
+        const transactionsResponse = await fetch('/data/transactions.json');
+        if (!transactionsResponse.ok) {
+          throw new Error('Network response was not ok');
         }
-        return response.json();
-      })
-      .then((users) => {
-        const user = users.find(
-          (user) => user.username === username && user.password === password
-        );
-        if (user) {
-          onLogin(user);
-          navigate('/profile/home');
-        } else {
-          setError("Invalid username or password");
-        }
-      })
-      .catch(() => {
-        setError("Error fetching user data");
-        console.log(username + " " + password);
-      });
+        const transactionsData = await transactionsResponse.json();
+        localStorage.setItem('transactions', JSON.stringify(transactionsData));
+        onLogin(user);
+        navigate('/profile/home');
+      } else {
+        setError('Invalid username or password');
+      }
+    } catch (error) {
+      setError('Error fetching data: ' + error.message);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <div className="full-screen-container">
+      <form onSubmit={handleSubmit}>
+      <h1>Moje e-grosze</h1>
       <div>
         <label>Username:</label>
         <input
@@ -53,8 +55,9 @@ const LoginForm = ({ onLogin }) => {
         />
       </div>
       {error && <p>{error}</p>}
-      <button type="submit">Login</button>
+      <button className="mainButton" type="submit">Login</button>
     </form>
+    </div>
   );
 };
 

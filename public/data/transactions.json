@@ -1,0 +1,80 @@
+{
+    "transakcje":[{
+        "numer_konta_nadawcy":"1234567890",
+        "nazwa_nadawcy":"Jan Kowalski",
+        "adres_nadawcy":"Nowa 1, 12-345 Miejscowosc",
+
+        "numer_konta_odbiorcy":"0987654321",
+        "nazwa_odbiorcy":"Piotr Nowak",
+        "adres_odbiorcy":"Nowa 2, 12-345 Miejscowosc",
+        "kwota":100,
+        "data":"15-06-2024",
+        "tytul":"Tytul 1"
+    },{
+        "numer_konta_nadawcy":"1234567890",
+        "nazwa_nadawcy":"Jan Kowalski",
+        "adres_nadawcy":"Nowa 1, 12-345 Miejscowosc",
+
+        "numer_konta_odbiorcy":"1029384756",
+        "nazwa_odbiorcy":"Tadeusz Nazwiskowski",
+        "adres_odbiorcy":"Nienowa 3, 54-321 Miejscowosc",
+        "kwota":200,
+        "data":"15-06-2024",
+        "tytul":"Tytul 2"
+    },{
+        "numer_konta_nadawcy":"0987654321",
+        "nazwa_nadawcy":"Piotr Nowak",
+        "adres_nadawcy":"Nowa 2, 12-345 Miejscowosc",
+
+        "numer_konta_odbiorcy":"1029384756",
+        "nazwa_odbiorcy":"Tadeusz Nazwiskowski",
+        "adres_odbiorcy":"Nienowa 3, 54-321 Miejscowosc",
+        "kwota":300,
+        "data":"16-06-2024",
+        "tytul":"Tytul 3"
+    },{
+        "numer_konta_nadawcy":"0987654321",
+        "nazwa_nadawcy":"Piotr Nowak",
+        "adres_nadawcy":"Nowa 2, 12-345 Miejscowosc",
+
+        "numer_konta_odbiorcy":"1234567890",
+        "nazwa_odbiorcy":"Jan Kowalski",
+        "adres_odbiorcy":"Nowa 1, 12-345 Miejscowosc",
+        "kwota":400,
+        "data":"16-06-2024",
+        "tytul":"Tytul 4"
+    },{
+        "numer_konta_nadawcy":"1029384756",
+        "nazwa_nadawcy":"Tadeusz Nazwiskowski",
+        "adres_nadawcy":"Nienowa 3, 54-321 Miejscowosc",
+
+        "numer_konta_odbiorcy":"1234567890",
+        "nazwa_odbiorcy":"Jan Kowalski",
+        "adres_odbiorcy":"Nowa 1, 12-345 Miejscowosc",
+        "kwota":500,
+        "data":"17-06-2024",
+        "tytul":"Tytul 5"
+    },{
+        "numer_konta_nadawcy":"1029384756",
+        "nazwa_nadawcy":"Tadeusz Nazwiskowski",
+        "adres_nadawcy":"Nienowa 3, 54-321 Miejscowosc",
+
+        "numer_konta_odbiorcy":"0987654321",
+        "nazwa_odbiorcy":"Piotr Nowak",
+        "adres_odbiorcy":"Nowa 2, 12-345 Miejscowosc",
+        "kwota":600,
+        "data":"17-06-2024",
+        "tytul":"Tytul 6"
+    },{
+        "numer_konta_nadawcy":"6574839201",
+        "nazwa_nadawcy":"Jan Kowalski",
+        "adres_nadawcy":"Nowa 1, 12-345 Miejscowosc",
+
+        "numer_konta_odbiorcy":"0987654321",
+        "nazwa_odbiorcy":"Piotr Nowak",
+        "adres_odbiorcy":"Nowa 2, 12-345 Miejscowosc",
+        "kwota":700,
+        "data":"15-06-2024",
+        "tytul":"Tytul 7"
+    }]
+}
