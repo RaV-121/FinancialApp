@@ -3,6 +3,8 @@ import { useNavigate, Routes, Route, Link } from 'react-router-dom';
 import Home from "../platform/Home.js"
 import Konta from "../platform/Konta.js"
 import Transakcje from "../platform/Transakcje.js"
+import Ustawienia from "../platform/Ustawienia.js"
+import exampleImage from "../../Prace_serwisowe.png"
 
 const UserProfile = ({ user, setUser }) => {
   const transactionsData = JSON.parse(localStorage.getItem('transactions')) || { transakcje: [] };
@@ -44,13 +46,12 @@ const UserProfile = ({ user, setUser }) => {
         <Route path="transakcje/*" element={<Transakcje user={savedUser} transactions={transactions}/>} />
         <Route path="budzet" element={<Budzet />} />
         <Route path="rachunki" element={<Rachunki />} />
-        <Route path="ustawienia" element={<Ustawienia />} />
+        <Route path="ustawienia/*" element={<Ustawienia />} />
       </Routes>
     </React.Fragment>
   );
 };
-const Budzet = () => <div>Budzet Content</div>;
-const Rachunki = () => <div>Rachunki Content</div>;
-const Ustawienia = () => <div>Ustawienia Content</div>;
+const Budzet = () => <div className="praceSerwisowe"><img src={exampleImage} alt="Prace serwisowe" /></div>;
+const Rachunki = () => <div className="praceSerwisowe"><img src={exampleImage} alt="Prace serwisowe" /></div>;
 
 export default UserProfile;

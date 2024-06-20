@@ -5,7 +5,7 @@ import HistoryList from './HistoryList';
 function History({user, transactions}) {
     const [showHistoryFilter, setShowHistoryFilter] = useState(false);
     const [filter, setFilter] = useState('');
-
+    document.documentElement.style.setProperty('--image-visibility','none')
     const handleFilterChange = (newFilter) => {
       setFilter(newFilter);
     };
@@ -27,7 +27,7 @@ function History({user, transactions}) {
     <React.Fragment>
         <div className='transaction-list'>
         <div className='History-header'>
-            <div>Historia transakcji {user.username}</div> 
+            <div><b>Historia transakcji</b> dla <b>{user.username}</b></div> 
             <button onClick={handleToggleHistoryFilter}>Filtruj</button>
         </div>
         

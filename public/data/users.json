@@ -7,12 +7,12 @@
       "konta":[{
         "id": 1,
         "numer_konta":"1234567890",
-        "typ_konta":"Direct",
+        "typ_konta":"Konto Osobiste",
         "saldo": 5000
       },{
         "id": 2,
         "numer_konta":"6574839201",
-        "typ_konta":"Direct",
+        "typ_konta":"Konto Oszczędnościowe",
         "saldo": 3000
       }]
     },
@@ -24,7 +24,7 @@
       "konta":[{
         "id": 3,
         "numer_konta":"0987654321",
-        "typ_konta":"Direct",
+        "typ_konta":"Konto Osobiste",
         "saldo": 7000
       }]
     },
@@ -36,7 +36,7 @@
       "konta":[{
         "id":4,
         "numer_konta":"1029384756",
-        "typ_konta":"Direct",
+        "typ_konta":"Konto Osobiste",
         "saldo": 9000
       }]
     }

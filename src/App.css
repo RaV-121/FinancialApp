@@ -3,9 +3,16 @@
   --light-green-color:rgb(77, 186, 77);
   --dark-green-color:rgb(9, 50, 9);
   --white-color: rgb(255, 255, 255);
+  --white-font-color: rgb(255, 255, 255);
+  --black-color: rgb(0,0,0);
+  --black-font-color:rgb(0,0,0);
   --grey-color:rgb(207, 204, 204);
+  --button-color:rgb(207, 204, 204);
+  --image-visibility:flex;
 }
 body{
+  color: var(--black-color);
+  background-color: var(--white-color);
   margin:0;
   padding:0;
   box-sizing: border-box;
@@ -37,7 +44,7 @@ body{
   font-size: 1.2rem;
   padding:4rem;
   border-radius: 1rem;
-  color:var(--white-color);
+  color:var(--white-font-color);
 }
 
 header{
@@ -47,13 +54,14 @@ header{
   padding: 0 4vw;
   height:60px;
   background-color: var(--dark-green-color);
-  color:var(--white-color);
+  color:var(--white-font-color);
   font-weight: bold;
   
 }
 
 .mainButton{
-  background-color: var(--grey-color);
+  background-color: var(--button-color);
+  color: var(--black-font-color);
   height:2rem;
   border: none;
   border-radius: 3px;
@@ -61,7 +69,7 @@ header{
 }
 .mainButton:hover{
   background-color: rgb(102, 102, 102);
-  color: var(--white-color);
+  color: var(--white-font-color);
 }
 .header-content{
   display: flex;
@@ -86,7 +94,7 @@ ul{
 }
 ul a{
   background-color: var(--green-color);
-  color:var(--white-color);
+  color:var(--white-font-color);
   padding: 10px 3vw;
   border-radius: 5px;
 }
@@ -119,7 +127,7 @@ ul a{
 .transaction-list{
   margin-left:20rem;
 }
-b{
+.dolar{
   background-color: var(--light-green-color);
   padding:5px;
   border-radius: 50%;
@@ -147,11 +155,53 @@ b{
   justify-content: space-between;
   padding:50px 150px 50px 50px;
 }
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.praceSerwisowe{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 205px);
+}
+img{
+  width: 50vw;
+}
+.konto_details{
+  margin-top: 20px;
+}
+.Category{
+  font-weight: bold;
+  margin-left: 25vw;
+}
+.childCategory{
+  padding: 10px;
+  margin-left: 26vw;
+}
+.wybierzImage{
+  display: var(--image-visibility);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 205px);
+}
+.newTransactionForm{
+  padding: 4vh;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items:flex-start;
+  height: calc(calc(100vh - 4vh) - 210px);
+  gap:20px;
+}
+.modeButtonsGroup{
+  display: flex;
+  padding:30px;
+  gap:30px;
+  width:10rem;
+  flex-direction: column;
+}
+.personalizacja{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5rem;
 }

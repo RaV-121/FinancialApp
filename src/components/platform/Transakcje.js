@@ -2,7 +2,9 @@ import React from 'react'
 import { Routes, Route, Link } from 'react-router-dom';
 import History from "./History.js"
 import NowaTransakcja from "./NowaTransakcja.js"
+import wybierzImage from "../../wybierz2.png"
 function Transakcje({user, transactions}) {
+  document.documentElement.style.setProperty('--image-visibility','flex')
 
   const handleAddTransaction = (newTransaction) => {
     const savedTransactions = JSON.parse(localStorage.getItem('transactions'));
@@ -33,7 +35,7 @@ function Transakcje({user, transactions}) {
         <li><Link to="new-transaction">Nowa transakcja</Link></li>
         </ul>
     </nav>
-
+    <div className="wybierzImage"><img src={wybierzImage} alt="Wybierz" /></div>
     <Routes>
             <Route path="history" element={<History user={user} transactions={transactions}/>} />
             <Route path="new-transaction" element={<NowaTransakcja user={user} onAddTransaction={handleAddTransaction}/>} />

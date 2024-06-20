@@ -21,7 +21,7 @@ function HistoryList({transakcja, index, filter, user}) {
   
   return (
     <React.Fragment>
-          {isCorrect(transakcja, filter) ? <div className='transaction' key={index}><b>$</b>{transakcja.tytul} {transakcja.kwota} PLN {transakcja.data} z KONTA {transakcja.numer_konta_nadawcy} na KONTO {transakcja.numer_konta_odbiorcy} {category(user, transakcja)}</div> : null}
+          {isCorrect(transakcja, filter) ? <div className='transaction' key={index}><b className='dolar'>$</b><b>Tytuł:</b> {transakcja.tytul} <b>|</b> {transakcja.data} <b>| {transakcja.kwota} PLN</b> z KONTA <b>{transakcja.numer_konta_nadawcy}</b> na KONTO <b>{transakcja.numer_konta_odbiorcy}</b> <b>|</b> {category(user, transakcja)}</div> : null}
     </React.Fragment>
   )
 }

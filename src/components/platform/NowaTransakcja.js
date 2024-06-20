@@ -8,6 +8,8 @@ function NowaTransakcja({ user, onAddTransaction }) {
     const [nazwa_odbiorcy, setNazwaOdbiorcy] = useState('');
     const [adres_odbiorcy, setAdresOdbiorcy] = useState('');
 
+    document.documentElement.style.setProperty('--image-visibility','none')
+
     function getFormattedDate() {
         const today = new Date();
         const day = String(today.getDate()).padStart(2, '0');
@@ -42,7 +44,7 @@ function NowaTransakcja({ user, onAddTransaction }) {
 
   return (
     <React.Fragment>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="newTransactionForm">
         <div>
           <label>
             Numer konta nadawcy:
@@ -59,7 +61,7 @@ function NowaTransakcja({ user, onAddTransaction }) {
           <label>
             Numer konta odbiorcy:
             <input
-              type="text"
+              type="number"
               value={numer_konta_odbiorcy}
               onChange={(e) => setNrOdbiorcy(e.target.value)}
               required
