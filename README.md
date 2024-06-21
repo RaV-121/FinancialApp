@@ -1,70 +1,117 @@
-# Getting Started with Create React App
+# Moje e-grosze : Projekt aplikacji do zarządzania finansami
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+>Ten projekt powstał w celu zapoznania się z ogólnym działaniem oraz mechanizmami powszechnie stosowanymi w aplikacjach typu fintech.
+Projekt zakłada próbę odwzorowania zasad działania tego typu aplikacji oraz wprowadzenie nowych, innowacyjnych usług.
 
-## Available Scripts
+## Schemat projektu
 
-In the project directory, you can run:
+Docelowy schemat całej aplikacji: 
+- `UI` <---> `API` <---> `Server Proxy` <---> `Baza Danych`
 
-### `npm start`
+Ze względu na rozległość całego projektu dotychczasowe działania sprowadziły się do schematu: 
+- `UI` <---> `pliki .JSON` (z danymi o użytkownikach oraz ich transakcjach) / webowe `localStorage`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Na początku warstwa UI używa metody `fetch()` by pobrać dane z plików .JSON a następnie zapisuje je w localStorage w którym aktualizowane są dane w razie działań użytkownika (w celu symulacji komunikacji z bazą danych)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologie
 
-### `npm test`
+>W projekcie zastosowano technologie webowe takie jak: `HTML`, `CSS` oraz wieloparadygmatowy język `JavaScript`. Do budowy całego interfejsu użytkownika została użyta jedna z najpopularniejszych bibliotek JavaScriptowych - ***`React`***. Dzięki niej aplikacja działa na zasadzie SPA (single-page-application) która korzysta z jednego szablonu HTML oraz w razie pewnych działań użytkownika wymienia tylko poszczególne komponenty bez potrzeby odświeżania całej aplikacji.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Wykorzystane generatory komponentów
+### `create-react-app`
+> Pakiet generujący podstawową strukturę katalogów i plików
 
-### `npm run build`
+Zaimplementowane poprzez komendę:
+```sh
+npx create-react-app 'nazwa_projektu'
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Wykorzystane narzędzia
+### `react-router-dom`
+> Narzędzie pozwalające na definiowanie i zarządzanie trasami w aplikacji
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Zaimplementowane poprzez komendę:
+```sh
+npm install react-router-dom
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### `react-hook-form`
+> Narzędzie ułatwiające obsługę formularzy
 
-### `npm run eject`
+Zaimplementowane poprzez komendę:
+```sh
+npm install react-hook-form
+```
+## Struktura plików aplikacji
+> Wypisane tylko najważniejsze segmenty
+* node_modules
+* public
+    * data
+        * transactions.json
+        * users.json
+* src
+    * App.js
+    * App.css
+    * components
+        * login
+            * (pliki **JS**)
+        * platform
+            * (pliki **JS**)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Uruchomienie aplikacji
+> Aby skorzystać z aplikacji należy wejść do katalogu głównego projektu oraz wpisać w cmd komendę
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```sh
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+> Następnie pokaże się okno logowania dla użytkownika. Domyślnie dodanych jest 3 użytkowników gdzie loginy i hasła znajdują się w `users.json`. 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Dla celu uruchomienia aplikacji informacje o jednym z użytkowników:
+`Login`: Random
+`Hasło`: Whoknows
 
-## Learn More
+> Po poprawnym wprowadzeniu danych ukazuje się okno główne aplikacji
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Struktura aplikacji (zakładki)
+> Część zakładek tymczasowo nie jest dostępna ze względu na brak zaimplementowanych mechanizmów oraz brak bazy danych z którą mogłaby wymieniać dane. Jendakże, każda z zakładek posiada routowanie do osobnej ścieżki.
+* Pulpit
+* Konta
+    * (lista kont)
+* Transakcje
+    * Historia
+    * Nowa transakcja
+* Budżet `niedostępne`
+* Rachunki `niedostępne`
+* Ustawienia
+    * Personalizacja
+    * Zarządzanie profilem `niedostępne`
+    * Bezpieczeństwo i prywatność `niedostępne`
+    
+### Pulpit
+> Zawiera podsumowanie o kontach użytkowników, ich saldach oraz ostatnio dokonanych transakcjach
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Konta
+> Zawiera informacje o poszczególnych kontach oraz ich właścicielach
 
-### Code Splitting
+### Transakcje
+> Zawiera historię o wszystkich dokonanych transakcjach ( z możliwością filtrowania ) oraz umożliwia dokonanie nowej
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Ustawienia
+> Zawiera zakładkę z możliwością zmiany kolorystyki / motywu całej aplikacji
 
-### Analyzing the Bundle Size
+## Docelowe działanie tymczasowo niedostępnych zakładek
+### Budżet
+> Będzie zawierać :
+* analizę zysków i strat z konkretnych przedziałów czasowych
+* możliwość planowania i określania celów finansowych
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Rachunki
+> Będzie zawierać :
+* listę o zbliżających się rachunkach
+* możliwość dodawania nowych rachunków
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Ustawienia / Zarządzanie i Bezpieczeństwo
+> Będzie zawierać :
+* możliwość zmiany hasła do konta
+* określanie limitów związanych z dokonywanie transakcji
